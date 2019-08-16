@@ -1,0 +1,242 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import "_variables.scss";
+
+/*CS Icones */
+@font-face {
+  font-family: "cs-icons";
+  src: url("#{$path-fonts-icons}cs-icons.eot");
+  src: url("#{$path-fonts-icons}cs-icons.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{$path-fonts-icons}cs-icons.woff") format("woff"),
+    url("#{$path-fonts-icons}cs-icons.ttf") format("truetype"),
+    url("#{$path-fonts-icons}cs-icons.svg#cs-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Alright Sans Regular*/
+@font-face {
+  font-family: "Alright Sans";
+  src: url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-2.eot");
+  src: url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-2.eot")
+      format("embedded-opentype"),
+    url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-3.woff")
+      format("woff"),
+    url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-1.ttf")
+      format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*Fonte Alright Sans Light*/
+@font-face {
+  font-family: "Alright Sans Light";
+  src: url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-2.eot");
+  src: url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-2.eot")
+      format("embedded-opentype"),
+    url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-3.woff")
+      format("woff"),
+    url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-1.ttf")
+      format("truetype");
+  font-weight: 100;
+}
+
+/*Fonte Alright Sans Bold*/
+@font-face {
+  font-family: "Alright Sans Bold";
+  src: url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-2.eot");
+  src: url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-2.eot")
+      format("embedded-opentype"),
+    url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-3.woff")
+      format("woff"),
+    url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-1.ttf")
+      format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*Fonte Alright Sans Medium*/
+@font-face {
+  font-family: "Alright Sans Medium";
+  src: url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-2.eot");
+  src: url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-2.eot")
+      format("embedded-opentype"),
+    url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-3.woff")
+      format("woff"),
+    url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-1.ttf")
+      format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*FontAwesome*/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("#{$path-fonts-fontawesome}fontawesome-webfont.eot?v=4.7.0");
+  src: url("#{$path-fonts-fontawesome}fontawesome-webfont.eot?#iefix&v=4.7.0")
+      format("embedded-opentype"),
+    url("#{$path-fonts-fontawesome}fontawesome-webfont.woff2?v=4.7.0")
+      format("woff2"),
+    url("#{$path-fonts-fontawesome}fontawesome-webfont.woff?v=4.7.0")
+      format("woff"),
+    url("#{$path-fonts-fontawesome}fontawesome-webfont.ttf?v=4.7.0")
+      format("truetype"),
+    url("#{$path-fonts-fontawesome}fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: auto;
+  min-height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow: auto;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: $font-default;
+  line-height: $line-height-base;
+  font-size: $font-size-base;
+  color: $gray;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+
+body {
+  @include mobile {
+    height: 100%;
+    min-height: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+
+    .container-fluid {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $blue-link;
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+nav {
+  ul {
+    @include list-unstyled();
+  }
+}
+
+/*** UTILS *****/
+.no-padding {
+  padding: 0 !important;
+
+  &-left {
+    padding-left: 0;
+  }
+
+  &-right {
+    padding-right: 0;
+  }
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-left {
+    text-align: left;
+  }
+}
+
+.center-align {
+  margin: 0 auto;
+}
+
+.float {
+  &-right {
+    float: right;
+  }
+
+  &-left {
+    float: left;
+  }
+}
+
+.desktop {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.mobile {
+  @include min-tablet {
+    display: none !important;
+  }
+}
+
+.validation-error {
+  font-size: 9pt;
+  color: red;
+}
+
+@import "banner.scss";
+@import "buttons.scss";
+@import "calendar.scss";
+@import "classes.scss";
+@import "cs-icons.scss";
+@import "duvidas.scss";
+@import "font-awesome.scss";
+@import "header.scss";
+@import "main.scss";
+@import "menu-header";
+@import "menu-loja";
+@import "produto.scss";
+@import "layout.scss";
+@import "footer.scss";
+@import "form.scss";
+@import "galeria.scss";

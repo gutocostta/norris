@@ -1,0 +1,84 @@
+@import '_variables.scss';
+
+.galeria {
+
+  .slick-slider {
+
+    .slick-list {
+      padding: 0 !important;
+
+      @include mobile {
+        overflow: unset;
+      }
+    }
+
+    .slick-slide {
+      margin-bottom: 10px;
+
+      > div {
+        max-width: 800px;
+        padding-bottom: 10px;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+        }
+
+        @include tablet {
+          max-width: 600px;
+        }
+
+        @include mobile {
+
+        }
+      }
+
+      &.slick-active {
+
+      }
+
+    }
+
+    /***** OVERRIDE SLICK *****/
+        .slick-dots {
+            position: relative !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include list-unstyled();
+            left: 0;
+            right: 0;
+            bottom: 20px !important;
+            width: 100%;
+
+        li {
+            width: 23%;
+            max-width: 23%;
+            height: 90px;
+            padding: 1px;
+            margin: 0 !important;
+            border: 1px solid #f1f1f1;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 85px;
+            }
+
+            &.slick-active {
+                border: 1px solid $orange;
+            }
+        }
+        }
+
+        .slick-next {
+            display: none;
+        }
+
+        .slick-prev {
+        display: none;
+        }
+    }
+}
