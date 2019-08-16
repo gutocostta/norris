@@ -21,7 +21,7 @@ const norrisReducer = (
       return Object.assign({}, state, {
         isFetching: false,
         hasFetched: true,
-        norris: action.norris
+        categorias: action.categorias
       });
     case FETCH_NORRIS_FAILED:
       return Object.assign({}, state, {

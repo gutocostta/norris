@@ -1,12 +1,12 @@
 import { httpService } from "./httpService";
 
 
-export function getCateorias() {
-  return httpService.get(`/categorias`);
+export function getCategorias() {
+  return httpService.get(`/categories`);
 }
 
 
 export function getCategoriaDetalhe(id) {
-  return httpService.get(`/${id}`);
+  return httpService.get(`/random?category=${id}`);
 }
 

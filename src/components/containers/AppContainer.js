@@ -14,28 +14,18 @@ import Header from "../shared/Header";
 import Footer from "../shared/Footer";
 import HomeContainer from "./HomeContainer";
 
-import "../../sass/app.scss";
+import "../../sass/App.scss";
 
 class AppContainer extends Component {
 
   render() {
-
-    // if (!fetchNorris || fetchNorris.isFetching) {
-    //   return (
-    //     <Grid className="app-container loading">
-    //       <div className="loader-container">
-    //         <Loader loading={true} className="loader" />
-    //       </div>
-    //     </Grid>
-    //   );
-    // }
 
     return (
       <div fluid="true" className="app-container">
         <ErrorWrapper>
           <Header />
           <NavigationNotifier>
-            
+
               <Switch>
                 <Route
                   exact

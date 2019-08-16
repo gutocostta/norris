@@ -1,73 +1,6 @@
 @import "../../node_modules/normalize.css/normalize.css";
 @import "_variables.scss";
 
-/*CS Icones */
-@font-face {
-  font-family: "cs-icons";
-  src: url("#{$path-fonts-icons}cs-icons.eot");
-  src: url("#{$path-fonts-icons}cs-icons.eot?#iefix")
-      format("embedded-opentype"),
-    url("#{$path-fonts-icons}cs-icons.woff") format("woff"),
-    url("#{$path-fonts-icons}cs-icons.ttf") format("truetype"),
-    url("#{$path-fonts-icons}cs-icons.svg#cs-icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*Alright Sans Regular*/
-@font-face {
-  font-family: "Alright Sans";
-  src: url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-2.eot");
-  src: url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-2.eot")
-      format("embedded-opentype"),
-    url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-3.woff")
-      format("woff"),
-    url("#{$path-fonts}AlrightSansRegular/3166ad31-2182-4fd1-9d82-7f10d4b7643e-1.ttf")
-      format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-/*Fonte Alright Sans Light*/
-@font-face {
-  font-family: "Alright Sans Light";
-  src: url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-2.eot");
-  src: url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-2.eot")
-      format("embedded-opentype"),
-    url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-3.woff")
-      format("woff"),
-    url("#{$path-fonts}AlrightSansThin/c088677c-ef3e-4a6e-ac49-3a0bdd785689-1.ttf")
-      format("truetype");
-  font-weight: 100;
-}
-
-/*Fonte Alright Sans Bold*/
-@font-face {
-  font-family: "Alright Sans Bold";
-  src: url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-2.eot");
-  src: url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-2.eot")
-      format("embedded-opentype"),
-    url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-3.woff")
-      format("woff"),
-    url("#{$path-fonts}AlrightSansBold/61992ac3-1582-4b76-9057-2e219552f837-1.ttf")
-      format("truetype");
-  font-style: normal;
-  font-weight: bold;
-}
-
-/*Fonte Alright Sans Medium*/
-@font-face {
-  font-family: "Alright Sans Medium";
-  src: url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-2.eot");
-  src: url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-2.eot")
-      format("embedded-opentype"),
-    url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-3.woff")
-      format("woff"),
-    url("#{$path-fonts}AlrightSansMedium/5f0232d6-b8f7-4780-babe-eb4163b9484d-1.ttf")
-      format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
 
 /*FontAwesome*/
 @font-face {
@@ -86,6 +19,8 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
 
 * {
   -webkit-box-sizing: border-box;
@@ -224,19 +159,10 @@ nav {
   color: red;
 }
 
-@import "banner.scss";
 @import "buttons.scss";
-@import "calendar.scss";
-@import "classes.scss";
-@import "cs-icons.scss";
-@import "duvidas.scss";
 @import "font-awesome.scss";
 @import "header.scss";
 @import "main.scss";
-@import "menu-header";
-@import "menu-loja";
-@import "produto.scss";
 @import "layout.scss";
 @import "footer.scss";
-@import "form.scss";
 @import "galeria.scss";

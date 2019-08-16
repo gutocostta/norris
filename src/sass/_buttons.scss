@@ -1,0 +1,240 @@
+@import "_variables";
+
+.btn-cs {
+  display: inline-block;
+  font-weight: $font-weight-normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  font-size: 14px;
+  color: #fff;
+  padding: 11px 2rem 10px 2rem;
+  margin: 5px 0;
+  border: 1px solid transparent;
+  outline: none;
+  background: $blue-link;
+  -moz-transition: ease-in-out all 0.3s;
+  -o-transition: ease-in-out all 0.3s;
+  -webkit-transition: ease-in-out all 0.3s;
+  transition: ease-in-out all 0.3s;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  //min-width: 200px;
+
+  &:hover {
+    background: $blue-over;
+    color: #fff;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  + .btn-cs {
+    margin-left: 20px;
+  }
+
+  &.disabled,
+  &:disabled {
+    background: $gray;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &-off {
+    background: #fff;
+    color: $blue;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.7);
+      color: $blue;
+    }
+
+    &.disabled,
+    &:disabled {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &-transparent {
+    @extend .btn-cs;
+    background: transparent !important;
+    border-color: $blue-link;
+    color: $blue-link;
+
+    &:hover {
+      outline: 1px solid $blue-over;
+      color: $blue-over;
+    }
+
+    &.disabled,
+    &:disabled {
+      background: transparent !important;
+      border-color: $gray-regular;
+      color: $gray-regular;
+      outline: none;
+    }
+
+    &-off {
+      @extend .btn-cs-transparent;
+      color: #fff;
+      border-color: #fff;
+
+      &:hover {
+        outline: 1px solid #fff;
+        color: #fff;
+      }
+
+      &.disabled,
+      &:disabled {
+        opacity: 0.2;
+        outline: none;
+      }
+    }
+  }
+
+  &-sm {
+    @extend .btn-cs;
+    font-size: 12px;
+    padding: 5px 1.5rem 4px 1.5rem;
+    //min-width: 160px;
+  }
+
+  &-lg {
+    @extend .btn-cs;
+    font-size: 16px;
+    padding: 12px 3rem 11px 3rem;
+    //min-width: 240px;
+  }
+
+  &-block {
+    width: 100%;
+  }
+
+  &-range {
+    @extend .btn-cs;
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    line-height: 1;
+    font-weight: normal;
+    border: none;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    min-width: inherit;
+    background-color: #005fc8;
+  }
+}
+
+.btn-cs-link {
+  display: inline-block;
+  font-weight: $font-weight-normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  font-size: 14px;
+  color: $blue-link;
+  padding: 2px;
+  margin: 1px;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-transition: all 3000ms ease-in-out;
+  -moz-transition: all 3000ms ease-in-out;
+  -ms-transition: all 3000ms ease-in-out;
+  -o-transition: all 3000ms ease-in-out;
+  transition: all 3000ms ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    color: $blue-over;
+  }
+
+  + .btn-cs-link {
+    margin-left: 20px;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $gray;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &-p {
+    @extend .btn-cs-link;
+    font-size: 12px;
+    color: $gray-dark;
+
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+
+  &-m {
+    @extend .btn-cs-link;
+    color: $gray-dark;
+
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+}
+
+.btn-cs-block {
+  display: block;
+  min-width: inherit;
+  width: 100% !important;
+
+  + .btn-cs-block {
+    margin-top: 20px;
+  }
+}
+
+.btn-cs-transparent {
+  background: transparent;
+  border: solid 1px $blue-link;
+  color: $blue-link;
+  //   text-align: center;
+  font-weight: bold;
+
+  display: inline-block;
+  font-weight: $font-weight-normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  font-size: 14px;
+  padding: 11px 2rem 10px 2rem;
+  margin: 5px 0;
+  outline: none;
+  -moz-transition: ease-in-out all 0.3s;
+  -o-transition: ease-in-out all 0.3s;
+  -webkit-transition: ease-in-out all 0.3s;
+  transition: ease-in-out all 0.3s;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+
+  &:hover {
+    background: $blue-over !important;
+    color: #fff !important;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+}

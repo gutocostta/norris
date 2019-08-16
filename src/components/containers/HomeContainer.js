@@ -1,39 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { Grid } from "react-flexbox-grid";
 
+import { fetchNorris, fetchNorrisDetalhe } from "../../actions/conteudos";
+
+import Loader from "../shared/Loader";
 import Home from "../pages/Home";
 
 
 class HomeContainer extends Component {
-  
+
 
   handleCommand = cmd => {
     const {
       props: {
-        carregarMaisProdutosAction,
-        alterarSegmento,
-        segmentoSelecionado
+        fetchNorrisDetalhe
       }
     } = this;
 
     switch (cmd.op) {
-      case "alterar-segmento":
-        alterarSegmento(cmd.params.segmento);
-        break;
-      case "carregar-mais-produtos":
-        carregarMaisProdutosAction(
-          {
-            filtro: [segmentoSelecionado],
-            skip: this.handleProdutosLista().itens.length,
-            take: 12
-          },
-          !!segmentoSelecionado ? true : false
-        );
-        if (!segmentoSelecionado)
-          this.setState({
-            rowLimit: this.state.rowLimit + 12
-          });
+      case "categoria-detalhe":
+        fetchNorrisDetalhe(cmd.params);
         break;
       default:
         break;
@@ -41,33 +29,39 @@ class HomeContainer extends Component {
   };
 
   componentDidMount() {
-    const {
-      props: {
-        categorias
-      }
-    } = this;
 
-    if (!categorias.hasFetched) {
+    const { fetchNorris, categorias } = this.props;
+
+    if (!categorias) {
       fetchNorris();
     }
   }
-  
 
   render() {
     const {
-      props: { categorias }
+      props: { categorias, categoriaDetalhe }
     } = this;
+
+    console.log(categorias);
+
+    if (!categorias || categorias.isFetching) {
+      return (
+        <Grid className="app-container loading">
+          <div className="loader-container">
+            <Loader loading={true} className="loader" />
+          </div>
+        </Grid>
+      );
+    }
 
     return (
       <div className="page-home">
         <main>
-          {!this.handleProdutosLista().isLoading && (
             <Home
-              produtos={this.handleProdutosLista().itens}
+              categorias={categorias}
+              categoriaDetalhe={categoriaDetalhe}
               handleCommand={this.handleCommand}
-              isLoading={categorias.isFetching}
             />
-          )}
         </main>
       </div>
     );
@@ -75,11 +69,13 @@ class HomeContainer extends Component {
 }
 
 const mapDispatchToProps = {
-  fetchNorris
+  fetchNorris,
+  fetchNorrisDetalhe
 };
 
 const mapStateToProps = state => ({
-  cateorias: state.cateorias
+  categorias: state.norris.categorias,
+  categoriaDetalhe : state.norrisDetalhe.categoriaDetalhe
 });
 
 export default withRouter(

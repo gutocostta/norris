@@ -1,15 +1,16 @@
 import * as ActionTypes from "./actionTypes";
-import { getCateorias, getCategoriaDetalhe } from "../services/conteudosService";
+import { getCategorias, getCategoriaDetalhe } from "../services/conteudosService";
 
 
+//categorias
 
 const fetchNorrisStarted = () => ({
   type: ActionTypes.FETCH_NORRIS_STARTED
 });
 
-const fetchNorrisSucceeded = norris => ({
+const fetchNorrisSucceeded = categorias => ({
   type: ActionTypes.FETCH_NORRIS_SUCCEEDED,
-  norris
+  categorias
 });
 
 const fetchNorrisFailed = error => ({
@@ -20,33 +21,43 @@ const fetchNorrisFailed = error => ({
 export const fetchNorris = () => dispatch => {
   dispatch(fetchNorrisStarted());
 
-  getCateorias()
+  getCategorias()
     .then(response => {
-      const ownCategorias = response.data;
-
-      const categorias = Object.assign({}, ownCategorias, {
-        itens: ownCategorias.itens.map(item =>
-          Object.assign({}, item, {
-            carregouDetalhe: false
-          })
-        )
-      });
-
-      dispatch(fetchNorrisSucceeded({ categorias }));
+      const categorias = response.data;
+      dispatch(fetchNorrisSucceeded(categorias));
     })
     .catch(error => {
       dispatch(fetchNorrisFailed());
     });
+
+    // getCateorias()
+    //     .then(response => {
+    //       const ownCategorias = response.data;
+
+    //       const categorias = Object.assign({}, ownCategorias, {
+    //         itens: ownCategorias.itens.map(item =>
+    //           Object.assign({}, item, {
+    //             carregouDetalhe: false
+    //           })
+    //         )
+    //       });
+
+    //       dispatch(fetchNorrisSucceeded({ categorias }));
+    //     })
+    //     .catch(error => {
+    //       dispatch(fetchNorrisFailed());
+    //     });
 };
 
+//detalhes
 
 const fetchNorrisDetalheStarted = () => ({
   type: ActionTypes.FETCH_NORRIS_DETALHE_STARTED
 });
 
-const fetchNorrisDetalheSucceeded = norrisDetalhe => ({
+const fetchNorrisDetalheSucceeded = categoriaDetalhe => ({
   type: ActionTypes.FETCH_NORRIS_DETALHE_SUCCEEDED,
-  norrisDetalhe
+  categoriaDetalhe
 });
 
 const fetchNorrisDetalheFailed = error => ({
@@ -59,11 +70,7 @@ export const fetchNorrisDetalhe = id => dispatch => {
 
   getCategoriaDetalhe(id)
     .then(response => {
-      const ownCategoriaDetalhe = response.data;
-
-      const categoriaDetalhe = Object.assign({}, ownCategoriaDetalhe, {
-        carregouDetalhe: true
-      });
+      const categoriaDetalhe = response.data;
       dispatch(fetchNorrisDetalheSucceeded(categoriaDetalhe));
     })
     .catch(error => {

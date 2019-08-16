@@ -4,81 +4,101 @@
 
   .slick-slider {
 
-    .slick-list {
-      padding: 0 !important;
-
-      @include mobile {
-        overflow: unset;
-      }
-    }
-
     .slick-slide {
-      margin-bottom: 10px;
 
       > div {
-        max-width: 800px;
-        padding-bottom: 10px;
 
-        img {
+        .card-body {
+          height:  280px;
+          padding: 15px;
+          margin: 20px;
+          text-align: center;
+          border: 1px solid $blue;
+          border-radius: 10px;
+          background: #fff;
+
+          p {
+            margin: 0;
+            line-height: 1;
+          }
+
+          h3 {
+            font-size: 2em;
+            font-weight: bold;
+            color: $gray-dark;
+            text-transform: capitalize;
+          }
+
+          img {
             display: block;
             margin: 0 auto;
-            width: 100%;
+            width: 45%;
             height: auto;
+          }
         }
 
-        @include tablet {
-          max-width: 600px;
-        }
-
-        @include mobile {
-
-        }
       }
 
       &.slick-active {
 
+        &.slick-center {
+
+            .card-body {
+              text-align: center;
+              border: 2px solid $orange;
+              background: #fff;
+              transform: scale(1.10);
+    
+              h3 {
+                font-size: 2em;
+                font-weight: bold;
+                color: $gray-dark;
+              }
+          }
+
+        }
       }
 
     }
 
     /***** OVERRIDE SLICK *****/
         .slick-dots {
-            position: relative !important;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            @include list-unstyled();
-            left: 0;
-            right: 0;
-            bottom: 20px !important;
-            width: 100%;
+            // position: relative !important;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-between;
+            // @include list-unstyled();
+            // left: 0;
+            // right: 0;
+            // bottom: 20px !important;
+            // width: 100%;
 
         li {
-            width: 23%;
-            max-width: 23%;
-            height: 90px;
-            padding: 1px;
-            margin: 0 !important;
-            border: 1px solid #f1f1f1;
+            // width: 23%;
+            // max-width: 23%;
+            // height: 90px;
+            // padding: 1px;
+            // margin: 0 !important;
+            // border: 1px solid #f1f1f1;
 
-            img {
-                width: 100%;
-                height: auto;
-                max-height: 85px;
-            }
+            // img {
+            //     width: 100%;
+            //     height: auto;
+            //     max-height: 85px;
+            // }
 
-            &.slick-active {
-                border: 1px solid $orange;
-            }
+            // &.slick-active {
+            //     border: 1px solid $orange;
+            // }
         }
         }
 
-        .slick-next {
-            display: none;
-        }
+        // .slick-next {
+        //     display: none;
+        // }
 
-        .slick-prev {
-        display: none;
-        }
+        // .slick-prev {
+        // display: none;
+        // }
     }
 }

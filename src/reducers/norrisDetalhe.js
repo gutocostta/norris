@@ -2,7 +2,6 @@ import {
   FETCH_NORRIS_DETALHE_STARTED,
   FETCH_NORRIS_DETALHE_SUCCEEDED,
   FETCH_NORRIS_DETALHE_FAILED
-  
 } from "../actions/actionTypes";
 
 
@@ -23,7 +22,7 @@ const norrisDetalheReducer = (
       return Object.assign({}, state, {
         isFetching: false,
         hasFetched: true,
-        norrisDetalhe: action.norrisDetalhe
+        categoriaDetalhe: action.categoriaDetalhe
       });
     case FETCH_NORRIS_DETALHE_FAILED:
       return Object.assign({}, state, {
