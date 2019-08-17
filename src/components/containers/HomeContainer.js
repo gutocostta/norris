@@ -39,7 +39,7 @@ class HomeContainer extends Component {
 
   render() {
     const {
-      props: { categorias, categoriaDetalhe }
+      props: { categorias, categoriaDetalhe, categoriaDetalheLoading }
     } = this;
 
     console.log(categorias);
@@ -60,6 +60,7 @@ class HomeContainer extends Component {
             <Home
               categorias={categorias}
               categoriaDetalhe={categoriaDetalhe}
+              categoriaDetalheLoading={categoriaDetalheLoading}
               handleCommand={this.handleCommand}
             />
         </main>
@@ -75,7 +76,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = state => ({
   categorias: state.norris.categorias,
-  categoriaDetalhe : state.norrisDetalhe.categoriaDetalhe
+  categoriaDetalhe : state.norrisDetalhe.categoriaDetalhe,
+  categoriaDetalheLoading : state.norrisDetalhe.isFetching
 });
 
 export default withRouter(

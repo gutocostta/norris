@@ -9,15 +9,16 @@ class Header extends Component {
 
     return (
       <header>
-        <div id="headerNavContent" className="content">
-          <div id="headerNav" className="page-content">
+        <div className="content">
+          <div className="page-content">
             <Grid fluid>
               <Row>
-                <Col xs={6} md={4}>
+                <Col xs={4} md={3}>
                   <Logo />
                 </Col>
-                <Col xs={6} md={8}>
-                  <h2>Chuck Norris answer for you!</h2>
+                <Col xs={8} md={9}>
+                  <h1>Chuck Norris App</h1>
+                  <p>Chuck Norris answer for you!</p>
                 </Col>
               </Row>
             </Grid>

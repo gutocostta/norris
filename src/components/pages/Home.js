@@ -5,7 +5,7 @@ import CarrosselCategorias from "../shared/CarrosselCategorias";
 import CategoriaDetalha from "../shared/CategoriaDetalha";
 
 
-export default ({ categorias, categoriaDetalhe, handleCommand }) => (
+export default ({ categorias, categoriaDetalhe, categoriaDetalheLoading, handleCommand }) => (
   <>
     <div className="home page-content">
 
@@ -13,8 +13,8 @@ export default ({ categorias, categoriaDetalhe, handleCommand }) => (
         <CarrosselCategorias categorias={categorias} handleCommand={handleCommand} />
       </div>
 
-      <div className="categoria-detalhe">
-        <CategoriaDetalha categoriaDetalhe={categoriaDetalhe} />
+      <div className="categorias-detalhe">
+        <CategoriaDetalha categoriaDetalhe={categoriaDetalhe} categoriaDetalheLoading={categoriaDetalheLoading} />
       </div>
 
     </div>

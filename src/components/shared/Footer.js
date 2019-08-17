@@ -7,14 +7,13 @@ export default () => (
       <Grid fluid>
         <Row>
           <div className="footer-content">
-            <Col sm={7} lg={8}>
-              <p></p>
+            <Col md={6} sm={7}>
+              <p>Teste - Guiabolso - Desenvolvedor Frontend</p>
             </Col>
-            <Col sm={2} lg={2}>
-              <p></p>
+            <Col md={1} sm={2}>
             </Col>
-            <Col sm={3} lg={2}>
-              <p></p>
+            <Col md={5} sm={3}>
+              <p className="text-right">Gustavo Costa</p>
             </Col>
           </div>
         </Row>

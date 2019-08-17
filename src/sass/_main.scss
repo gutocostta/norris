@@ -39,8 +39,12 @@
       min-height: calc(100vh - 300px);
     }
 
+    @include min-tablet {
+      min-height: calc(100vh - 300px);
+    }
+
     @include mobile {
-      padding-top: 100px;
+      padding-top: 10px;
     }
 
     .page-content {
@@ -57,12 +61,6 @@
 
       &-content {
         width: 100%;
-      }
-
-      @include mobile {
-        &.page-content {
-          padding-top: 40px;
-        }
       }
 
     }

@@ -13,7 +13,7 @@
           padding: 15px;
           margin: 20px;
           text-align: center;
-          border: 1px solid $blue;
+          border: 1px solid #607D8B;
           border-radius: 10px;
           background: #fff;
 
@@ -35,6 +35,11 @@
             width: 45%;
             height: auto;
           }
+
+          button {
+            display: none;
+            margin: 0 auto;
+          }
         }
 
       }
@@ -46,13 +51,21 @@
             .card-body {
               text-align: center;
               border: 2px solid $orange;
-              background: #fff;
+              background: #FB8C00;
               transform: scale(1.10);
+
+              p {
+                color: #fff;
+              }
     
               h3 {
                 font-size: 2em;
                 font-weight: bold;
-                color: $gray-dark;
+                color: #fff;
+              }
+
+              button {
+                display: block;
               }
           }
 
@@ -62,43 +75,36 @@
     }
 
     /***** OVERRIDE SLICK *****/
-        .slick-dots {
-            // position: relative !important;
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: space-between;
-            // @include list-unstyled();
-            // left: 0;
-            // right: 0;
-            // bottom: 20px !important;
-            // width: 100%;
 
-        li {
-            // width: 23%;
-            // max-width: 23%;
-            // height: 90px;
-            // padding: 1px;
-            // margin: 0 !important;
-            // border: 1px solid #f1f1f1;
-
-            // img {
-            //     width: 100%;
-            //     height: auto;
-            //     max-height: 85px;
-            // }
-
-            // &.slick-active {
-            //     border: 1px solid $orange;
-            // }
-        }
+        .slick-prev, 
+        .slick-next {
+            height: 285px;
+            width: 23px;
+            background: #455A64;
         }
 
-        // .slick-next {
-        //     display: none;
-        // }
+        .slick-prev:before, 
+        .slick-next:before {
+            font-family: 'FontAwesome';
+            font-size: 26px;
+            line-height: 1;
+            color: #fff;
+            font-weight: bold;
+            opacity: 1;
+        }
 
-        // .slick-prev {
-        // display: none;
-        // }
+        .slick-prev:before {
+          content: '\f104';
+        }
+
+        .slick-next:before {
+          content: '\f105';
+        }
+
+        @include mobile {
+          .slick-dots {
+            display: none !important;
+          }
+        }
     }
 }

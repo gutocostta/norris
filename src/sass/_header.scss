@@ -3,20 +3,10 @@
 header {
   padding-top: 15px;
   margin-bottom: 40px;
-  background-color: $blue;
-  transition-property: all;
-  transition-duration: 1s;
-  transition-delay: 0s;
-  transition-timing-function: ease;
-  z-index: 50;
-
+  background-color: #546E7A;
 
   .content {
     height: 100%;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-delay: 0s;
-    transition-timing-function: ease;
   }
 
   .page-content {
@@ -28,8 +18,7 @@ header {
   .logo-header {
     position: relative;
     width: 155px;
-    height: 60px;
-    margin-left: -16px;
+    height: 140px;
 
     a {
       left: 0;
@@ -43,39 +32,42 @@ header {
 
     @include mobile {
       width: 100%;
-      height: auto;
-      margin-left: 0px;
+      height: 125px;
+
+      img {
+        width: 50%;
+        height: auto;
+      }
     }
+
   }
 
 
-  .titulo {
-    margin: 40px 0;
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 
-    @media (max-width: 768px) {
-      margin: 0;
-    }
+  h1 {
+    text-align: left;
+    color: #fff;
+    font-weight: bold;
+    font-size: 46px;
+  }
 
+  p {
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  @include mobile {
     h1 {
-      text-align: center;
-      color: #fff;
       font-size: 26px;
     }
 
     p {
-      text-align: center;
-      color: #fff;
       font-size: 14px;
     }
-
-    @include mobile {
-      h1 {
-        font-size: 22px;
-      }
-
-      p {
-        margin: 10px 30px;
-      }
-    }
   }
+  
 }
